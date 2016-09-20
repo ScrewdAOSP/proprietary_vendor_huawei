@@ -14,6 +14,8 @@
 
 LOCAL_PATH := $(call my-dir)
 
+ifeq ($(TARGET_DEVICE),angler)
+
 include $(CLEAR_VARS)
 LOCAL_MODULE := TimeService
 LOCAL_MODULE_TAGS := optional
@@ -402,3 +404,5 @@ LOCAL_PROPRIETARY_MODULE := true
 LOCAL_MULTILIB := both
 LOCAL_SRC_FILES_32 := proprietary/lib/libqmi_cci.so
 include $(BUILD_PREBUILT)
+
+endif
