@@ -25,12 +25,13 @@ PRODUCT_PACKAGES += \
 
 # Prebuilt jars
 PRODUCT_PACKAGES += \
-    qcrilhook \
-    com.google.widevine.software.drm
+    qcrilhook
 
 # Prebuilt privileged APKs
 PRODUCT_PACKAGES += \
     CallStatistics \
+    CarrierEntitlement \
+    CarrierServices \
     CNEService \
     ConnMO \
     DCMO \

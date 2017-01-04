@@ -1,4 +1,4 @@
-# Copyright (C) 2015-2016 The Pure Nexus Project
+# Copyright (C) 2016 The Pure Nexus Project
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -21,6 +21,26 @@ LOCAL_MODULE := CallStatistics
 LOCAL_MODULE_TAGS := optional
 LOCAL_SRC_FILES := CallStatistics/CallStatistics.apk
 LOCAL_CERTIFICATE := platform
+LOCAL_MODULE_CLASS := APPS
+LOCAL_PRIVILEGED_MODULE := true
+LOCAL_MODULE_SUFFIX := $(COMMON_ANDROID_PACKAGE_SUFFIX)
+include $(BUILD_PREBUILT)
+
+include $(CLEAR_VARS)
+LOCAL_MODULE := CarrierEntitlement
+LOCAL_MODULE_TAGS := optional
+LOCAL_SRC_FILES := CarrierEntitlement/CarrierEntitlement.apk
+LOCAL_CERTIFICATE := platform
+LOCAL_MODULE_CLASS := APPS
+LOCAL_PRIVILEGED_MODULE := true
+LOCAL_MODULE_SUFFIX := $(COMMON_ANDROID_PACKAGE_SUFFIX)
+include $(BUILD_PREBUILT)
+
+include $(CLEAR_VARS)
+LOCAL_MODULE := CarrierServices
+LOCAL_MODULE_TAGS := optional
+LOCAL_SRC_FILES := CarrierServices/CarrierServices.apk
+LOCAL_CERTIFICATE := PRESIGNED
 LOCAL_MODULE_CLASS := APPS
 LOCAL_PRIVILEGED_MODULE := true
 LOCAL_MODULE_SUFFIX := $(COMMON_ANDROID_PACKAGE_SUFFIX)
@@ -70,13 +90,10 @@ include $(CLEAR_VARS)
 LOCAL_MODULE := DMService
 LOCAL_MODULE_TAGS := optional
 LOCAL_SRC_FILES := DMService/DMService.apk
-LOCAL_REQUIRED_MODULES :=  libdmjavaplugin_32.so libdmengine_32.so
 LOCAL_CERTIFICATE := platform
 LOCAL_MODULE_CLASS := APPS
 LOCAL_PRIVILEGED_MODULE := true
 LOCAL_MODULE_SUFFIX := $(COMMON_ANDROID_PACKAGE_SUFFIX)
-LOCAL_DEX_PREOPT := false
-LOCAL_MULTILIB := 32
 include $(BUILD_PREBUILT)
 
 include $(CLEAR_VARS)
@@ -107,7 +124,6 @@ LOCAL_CERTIFICATE := PRESIGNED
 LOCAL_MODULE_CLASS := APPS
 LOCAL_PRIVILEGED_MODULE := true
 LOCAL_MODULE_SUFFIX := $(COMMON_ANDROID_PACKAGE_SUFFIX)
-LOCAL_DEX_PREOPT := false
 include $(BUILD_PREBUILT)
 
 include $(CLEAR_VARS)
@@ -128,7 +144,6 @@ LOCAL_CERTIFICATE := platform
 LOCAL_MODULE_CLASS := APPS
 LOCAL_PRIVILEGED_MODULE := true
 LOCAL_MODULE_SUFFIX := $(COMMON_ANDROID_PACKAGE_SUFFIX)
-LOCAL_DEX_PREOPT := false
 include $(BUILD_PREBUILT)
 
 endif
