@@ -1,4 +1,4 @@
-# Copyright (C) 2017 The Pure Nexus Project
+# Copyright (C) 2015-2017 The Pure Nexus Project
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -41,6 +41,16 @@ LOCAL_MODULE := CarrierServices
 LOCAL_MODULE_TAGS := optional
 LOCAL_SRC_FILES := CarrierServices/CarrierServices.apk
 LOCAL_CERTIFICATE := PRESIGNED
+LOCAL_MODULE_CLASS := APPS
+LOCAL_PRIVILEGED_MODULE := true
+LOCAL_MODULE_SUFFIX := $(COMMON_ANDROID_PACKAGE_SUFFIX)
+include $(BUILD_PREBUILT)
+
+include $(CLEAR_VARS)
+LOCAL_MODULE := CarrierSetup
+LOCAL_MODULE_TAGS := optional
+LOCAL_SRC_FILES := CarrierSetup/CarrierSetup.apk
+LOCAL_CERTIFICATE := platform
 LOCAL_MODULE_CLASS := APPS
 LOCAL_PRIVILEGED_MODULE := true
 LOCAL_MODULE_SUFFIX := $(COMMON_ANDROID_PACKAGE_SUFFIX)
@@ -90,6 +100,17 @@ include $(CLEAR_VARS)
 LOCAL_MODULE := DMService
 LOCAL_MODULE_TAGS := optional
 LOCAL_SRC_FILES := DMService/DMService.apk
+LOCAL_REQUIRED_MODULES :=  libdmjavaplugin_32.so libdmengine_32.so
+LOCAL_CERTIFICATE := platform
+LOCAL_MODULE_CLASS := APPS
+LOCAL_PRIVILEGED_MODULE := true
+LOCAL_MODULE_SUFFIX := $(COMMON_ANDROID_PACKAGE_SUFFIX)
+include $(BUILD_PREBUILT)
+
+include $(CLEAR_VARS)
+LOCAL_MODULE := Entitlement
+LOCAL_MODULE_TAGS := optional
+LOCAL_SRC_FILES := Entitlement/Entitlement.apk
 LOCAL_CERTIFICATE := platform
 LOCAL_MODULE_CLASS := APPS
 LOCAL_PRIVILEGED_MODULE := true
